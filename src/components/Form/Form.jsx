@@ -23,7 +23,7 @@ export default class Form extends React.Component {
   render() {
     return (
       <form onSubmit={this.onContactAdd} className={s.form}>
-        <label className={s.name} htmlFor={this.elemId}>
+        <label className={s.name}>
           {' '}
           Name
           <input
@@ -38,7 +38,7 @@ export default class Form extends React.Component {
             required
           />
         </label>
-        <label className={s.number} htmlFor={this.elemId}>
+        <label className={s.number}>
           Number
           <input
             id={this.elemId}

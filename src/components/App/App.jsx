@@ -33,13 +33,14 @@ export default class App extends React.Component {
       number,
     };
 
-    if (this.state.contacts.find(contact => contact.name === name)) {
+    const foundContact = this.state.contacts.find(
+      contact => contact.name.toLowerCase() === name.toLowerCase()
+    );
+
+    if (foundContact) {
       window.alert(`${name} is already in contacts`);
       return;
-    } else if (
-      [] ??
-      this.state.contacts.find(contact => contact.name !== name)
-    ) {
+    } else if (!foundContact) {
       this.setState(({ contacts }) => ({
         contacts: [formValue, ...contacts],
       }));
