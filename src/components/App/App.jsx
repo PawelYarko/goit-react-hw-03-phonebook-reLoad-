@@ -76,7 +76,7 @@ export default class App extends React.Component {
           <Filter value={filter} onFilterChange={this.onFilterChange} />
           <ContactsList
             contacts={visibleContacts}
-            onDeleteContact={this.handleDeleteContact(this)}
+            onDeleteContact={this.handleDeleteContact.bind(this)}
           />
         </div>
       </div>
